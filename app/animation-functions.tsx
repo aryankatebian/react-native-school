@@ -124,13 +124,13 @@ export default function AnimationFunctions() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a',
+    backgroundColor: '#f1f5f9',
     padding: 20,
   },
   heading: {
     fontSize: 24,
     fontWeight: '800',
-    color: '#f8fafc',
+    color: '#0f172a',
     marginBottom: 4,
   },
   sub: {
@@ -145,18 +145,16 @@ const styles = StyleSheet.create({
   trackLabel: {
     fontSize: 13,
     fontWeight: '700',
-    color: '#94a3b8',
+    color: '#475569',
     marginBottom: 8,
     fontFamily: 'SpaceMono',
   },
   trackBar: {
     height: 44,
-    backgroundColor: '#1e293b',
+    backgroundColor: '#e2e8f0',
     borderRadius: 22,
     justifyContent: 'center',
     paddingLeft: 4,
-    borderWidth: 1,
-    borderColor: '#334155',
   },
   ball: {
     width: 36,
@@ -169,29 +167,39 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   btn: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   btnText: {
-    color: '#e2e8f0',
+    color: '#1e293b',
     fontSize: 14,
     fontWeight: '600',
   },
   separator: {
     height: 1,
-    backgroundColor: '#1e293b',
+    backgroundColor: '#e2e8f0',
     marginVertical: 20,
   },
   apiBox: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderRadius: 12,
     padding: 14,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   apiTitle: {
     fontSize: 12,
@@ -203,6 +211,6 @@ const styles = StyleSheet.create({
   },
   apiText: {
     fontSize: 13,
-    color: '#94a3b8',
+    color: '#475569',
   },
 });

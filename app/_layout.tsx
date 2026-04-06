@@ -10,7 +10,7 @@ export { ErrorBoundary } from 'expo-router';
 SplashScreen.preventAutoHideAsync();
 
 const HEADER_STYLE = {
-  backgroundColor: '#0f172a',
+  backgroundColor: '#f1f5f9',
 };
 
 export default function RootLayout() {
@@ -37,9 +37,9 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerStyle: HEADER_STYLE,
-          headerTintColor: '#f8fafc',
+          headerTintColor: '#0f172a',
           headerTitleStyle: { fontWeight: '600' },
-          contentStyle: { backgroundColor: '#0f172a' },
+          contentStyle: { backgroundColor: '#f1f5f9' },
         }}
       >
         <Stack.Screen name="index" options={{ headerShown: false }} />
@@ -51,6 +51,8 @@ export default function RootLayout() {
         <Stack.Screen name="gesture-ball" options={{ title: 'Gesture Ball' }} />
         <Stack.Screen name="keyframes" options={{ title: 'Keyframes' }} />
         <Stack.Screen name="css-vs-reanimated" options={{ title: 'CSS Animations' }} />
+        <Stack.Screen name="svg-animations" options={{ title: 'SVG Animations' }} />
+        <Stack.Screen name="blinking-characters" options={{ title: 'Blinking Characters' }} />
       </Stack>
     </GestureHandlerRootView>
   );

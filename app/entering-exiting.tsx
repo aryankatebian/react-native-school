@@ -101,13 +101,13 @@ export default function EnteringExiting() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a',
+    backgroundColor: '#f1f5f9',
     padding: 20,
   },
   heading: {
     fontSize: 24,
     fontWeight: '800',
-    color: '#f8fafc',
+    color: '#0f172a',
     marginBottom: 4,
   },
   sub: {
@@ -126,9 +126,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 7,
     borderRadius: 20,
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
   },
   chipActive: {
     backgroundColor: '#3b82f6',
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   chipText: {
     fontSize: 13,
     fontWeight: '600',
-    color: '#94a3b8',
+    color: '#475569',
   },
   chipTextActive: {
     color: '#fff',
@@ -166,25 +166,35 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   btn: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     paddingHorizontal: 20,
     paddingVertical: 12,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
     alignSelf: 'flex-start',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   btnText: {
-    color: '#e2e8f0',
+    color: '#1e293b',
     fontSize: 14,
     fontWeight: '600',
   },
   apiBox: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderRadius: 12,
     padding: 14,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   apiTitle: {
     fontSize: 12,
@@ -196,7 +206,7 @@ const styles = StyleSheet.create({
   },
   apiText: {
     fontSize: 13,
-    color: '#94a3b8',
+    color: '#475569',
     lineHeight: 20,
   },
 });

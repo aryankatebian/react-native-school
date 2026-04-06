@@ -47,6 +47,16 @@ const lessons = [
     title: 'CSS Animations in Reanimated',
     description: 'How CSS transitions, @keyframes, and animation loops map to Reanimated APIs',
   },
+  {
+    href: '/svg-animations',
+    title: 'SVG Animations',
+    description: 'Animated progress rings, bar charts, dot grids, and waves — useAnimatedProps on SVG components',
+  },
+  {
+    href: '/blinking-characters',
+    title: 'Blinking Characters',
+    description: 'Production SVG illustration with 3 characters whose eyes blink independently — useAnimatedProps on SVG',
+  },
 ] as const;
 
 export default function HomeScreen() {

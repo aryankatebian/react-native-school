@@ -115,13 +115,13 @@ export default function BmiCalculator() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a',
+    backgroundColor: '#f1f5f9',
     padding: 20,
   },
   heading: {
     fontSize: 22,
     fontWeight: '800',
-    color: '#f8fafc',
+    color: '#0f172a',
     marginBottom: 4,
   },
   sub: {
@@ -139,18 +139,23 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 13,
-    color: '#94a3b8',
+    color: '#475569',
     marginBottom: 6,
     fontWeight: '600',
   },
   input: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderRadius: 10,
     padding: 12,
-    color: '#f8fafc',
+    color: '#0f172a',
     fontSize: 16,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   resultRow: {
     flexDirection: 'row',
@@ -160,13 +165,13 @@ const styles = StyleSheet.create({
   },
   resultLabel: {
     fontSize: 16,
-    color: '#94a3b8',
+    color: '#475569',
     fontWeight: '600',
   },
   resultValue: {
     fontSize: 28,
     fontWeight: '800',
-    color: '#f8fafc',
+    color: '#0f172a',
   },
   resultCategory: {
     fontSize: 16,
@@ -190,11 +195,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   apiBox: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderRadius: 12,
     padding: 14,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   apiTitle: {
     fontSize: 12,
@@ -206,7 +216,7 @@ const styles = StyleSheet.create({
   },
   apiText: {
     fontSize: 13,
-    color: '#94a3b8',
+    color: '#475569',
     lineHeight: 20,
   },
 });

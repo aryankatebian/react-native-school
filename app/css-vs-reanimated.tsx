@@ -163,18 +163,18 @@ export default function CSSvsReanimated() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a',
+    backgroundColor: '#f1f5f9',
     padding: 20,
   },
   heading: {
     fontSize: 22,
     fontWeight: '800',
-    color: '#f8fafc',
+    color: '#0f172a',
     marginBottom: 4,
   },
   sub: {
     fontSize: 14,
-    color: '#94a3b8',
+    color: '#475569',
     marginBottom: 20,
     lineHeight: 20,
   },
@@ -184,19 +184,21 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 15,
     fontWeight: '700',
-    color: '#e2e8f0',
+    color: '#0f172a',
     marginBottom: 4,
   },
   cssCode: {
     fontFamily: 'SpaceMono',
     fontSize: 11,
-    color: '#60a5fa',
-    backgroundColor: '#1e293b',
+    color: '#1e40af',
+    backgroundColor: '#f1f5f9',
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 6,
     marginBottom: 12,
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
   },
   demoRow: {
     flexDirection: 'row',
@@ -226,7 +228,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   hint: {
-    color: '#94a3b8',
+    color: '#475569',
     fontSize: 13,
   },
   keyframeRow: {
@@ -255,21 +257,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 5,
     borderRadius: 8,
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
   },
   replayText: {
-    color: '#e2e8f0',
+    color: '#1e293b',
     fontSize: 12,
     fontWeight: '600',
   },
   apiBox: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderRadius: 12,
     padding: 14,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   apiTitle: {
     fontSize: 12,
@@ -281,7 +288,7 @@ const styles = StyleSheet.create({
   },
   apiText: {
     fontSize: 13,
-    color: '#94a3b8',
+    color: '#475569',
     lineHeight: 20,
   },
 });

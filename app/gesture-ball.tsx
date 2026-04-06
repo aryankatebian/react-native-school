@@ -19,6 +19,8 @@ export default function GestureBall() {
   const scale = useSharedValue(1);
   const savedX = useSharedValue(0);
   const savedY = useSharedValue(0);
+  // Use a shared value so the gesture worklet always reads the latest mode
+  const isSpring = useSharedValue(true);
 
   const pan = Gesture.Pan()
     .onStart(() => {
@@ -32,7 +34,7 @@ export default function GestureBall() {
     })
     .onEnd((e) => {
       scale.value = withSpring(1);
-      if (mode === 'spring') {
+      if (isSpring.value) {
         translateX.value = withSpring(0, { damping: 12, stiffness: 120 });
         translateY.value = withSpring(0, { damping: 12, stiffness: 120 });
       } else {
@@ -57,6 +59,11 @@ export default function GestureBall() {
     ],
   }));
 
+  const switchMode = (m: 'spring' | 'decay') => {
+    setMode(m);
+    isSpring.value = m === 'spring';
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Gesture-Driven Animation</Text>
@@ -67,7 +74,7 @@ export default function GestureBall() {
       <View style={styles.modeRow}>
         <Pressable
           style={[styles.modeBtn, mode === 'spring' && styles.modeBtnActive]}
-          onPress={() => setMode('spring')}
+          onPress={() => switchMode('spring')}
         >
           <Text style={[styles.modeText, mode === 'spring' && styles.modeTextActive]}>
             Spring
@@ -75,7 +82,7 @@ export default function GestureBall() {
         </Pressable>
         <Pressable
           style={[styles.modeBtn, mode === 'decay' && styles.modeBtnActive]}
-          onPress={() => setMode('decay')}
+          onPress={() => switchMode('decay')}
         >
           <Text style={[styles.modeText, mode === 'decay' && styles.modeTextActive]}>
             Decay
@@ -85,11 +92,14 @@ export default function GestureBall() {
 
       <View style={styles.arena}>
         <GestureDetector gesture={pan}>
-          <Animated.View style={[styles.ball, ballStyle]}>
-            <Text style={styles.ballText}>
-              {mode === 'spring' ? '🔵' : '🟠'}
-            </Text>
-          </Animated.View>
+          <Animated.View
+            style={[
+              styles.ball,
+              { backgroundColor: mode === 'spring' ? '#3b82f6' : '#f59e0b' },
+              { shadowColor: mode === 'spring' ? '#3b82f6' : '#f59e0b' },
+              ballStyle,
+            ]}
+          />
         </GestureDetector>
       </View>
 
@@ -107,13 +117,13 @@ export default function GestureBall() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a',
+    backgroundColor: '#f1f5f9',
     padding: 20,
   },
   heading: {
     fontSize: 24,
     fontWeight: '800',
-    color: '#f8fafc',
+    color: '#0f172a',
     marginBottom: 4,
   },
   sub: {
@@ -131,9 +141,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 20,
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
   },
   modeBtnActive: {
     backgroundColor: '#3b82f6',
@@ -142,7 +152,7 @@ const styles = StyleSheet.create({
   modeText: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#94a3b8',
+    color: '#475569',
   },
   modeTextActive: {
     color: '#fff',
@@ -151,34 +161,39 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
     marginBottom: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   ball: {
     width: BALL_SIZE,
     height: BALL_SIZE,
     borderRadius: BALL_SIZE / 2,
-    backgroundColor: '#3b82f6',
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#3b82f6',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.5,
     shadowRadius: 20,
     elevation: 10,
   },
-  ballText: {
-    fontSize: 32,
-  },
   apiBox: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderRadius: 12,
     padding: 14,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   apiTitle: {
     fontSize: 12,
@@ -190,7 +205,7 @@ const styles = StyleSheet.create({
   },
   apiText: {
     fontSize: 13,
-    color: '#94a3b8',
+    color: '#475569',
     lineHeight: 20,
   },
 });
