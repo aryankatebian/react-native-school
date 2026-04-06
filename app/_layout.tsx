@@ -43,7 +43,7 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="bmi-calculator" options={{ title: 'BMI Calculator' }} />
+        <Stack.Screen name="bmi-calculator" options={{ title: 'Body Mass Index Visualizer' }} />
         <Stack.Screen name="shared-values" options={{ title: 'Shared Values' }} />
         <Stack.Screen name="animation-functions" options={{ title: 'Animation Functions' }} />
         <Stack.Screen name="entering-exiting" options={{ title: 'Entering & Exiting' }} />

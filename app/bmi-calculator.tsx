@@ -55,7 +55,7 @@ export default function BmiCalculator() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>What's your BMI?</Text>
+      <Text style={styles.heading}>Body Mass Index Calculator</Text>
       <Text style={styles.sub}>Enter your weight and height to visualize your BMI</Text>
 
       <View style={styles.inputs}>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   heading: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: '800',
     color: '#f8fafc',
     marginBottom: 4,
