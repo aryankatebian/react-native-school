@@ -62,6 +62,9 @@ export default function EnteringExiting() {
           </Pressable>
         ))}
       </View>
+      <Pressable style={styles.btn} onPress={addCard}>
+        <Text style={styles.btnText}>+ Add Card</Text>
+      </Pressable>
 
       <View style={styles.cardGrid}>
         {cards.map((id) => (
@@ -81,9 +84,7 @@ export default function EnteringExiting() {
         ))}
       </View>
 
-      <Pressable style={styles.btn} onPress={addCard}>
-        <Text style={styles.btnText}>+ Add Card</Text>
-      </Pressable>
+     
 
       <View style={{ flex: 1 }} />
 

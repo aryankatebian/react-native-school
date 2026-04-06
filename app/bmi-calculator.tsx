@@ -12,8 +12,8 @@ import Animated, {
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
-const INITIAL_WEIGHT = 80;
-const INITIAL_HEIGHT = 1.83;
+const INITIAL_WEIGHT = 88;
+const INITIAL_HEIGHT = 1.86;
 
 const BMI_INPUT = [0, 15, 17.5, 18.5, 25, 27.5, 32.5];
 const BMI_COLORS = [
@@ -35,7 +35,7 @@ export default function BmiCalculator() {
 
   const vizStyle = useAnimatedStyle(() => ({
     width: clamp(interpolate(weight.value, [0, 120], [0, 250]), 0, 250),
-    height: clamp(interpolate(height.value, [0, 2.3], [0, 350]), 0, 350),
+    height: clamp(interpolate(height.value, [0, 2.3], [0, 350]), 0,350),
     backgroundColor: interpolateColor(bmi.value, BMI_INPUT, BMI_COLORS),
   }));
 
@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '800',
     color: '#0f172a',
+    width: 100,
   },
   resultCategory: {
     fontSize: 16,

@@ -14,7 +14,7 @@ const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
-const BLINK_DURATION = 80;
+const BLINK_DURATION = 120;
 const BLINK_INTERVAL_MIN = 2000;
 const BLINK_INTERVAL_MAX = 5000;
 
