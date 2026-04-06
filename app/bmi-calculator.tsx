@@ -39,13 +39,6 @@ export default function BmiCalculator() {
     backgroundColor: interpolateColor(bmi.value, BMI_INPUT, BMI_COLORS),
   }));
 
-  const labelStyle = useAnimatedStyle(() => {
-    const val = bmi.value;
-    const color =
-      val < 18.5 ? '#f59e0b' : val < 25 ? '#22c55e' : val < 30 ? '#f59e0b' : '#ef4444';
-    return { color };
-  });
-
   const labelProps = useAnimatedProps(() => {
     const val = bmi.value;
     const label =

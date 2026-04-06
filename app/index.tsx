@@ -79,7 +79,7 @@ export default function HomeScreen() {
         {lessons.map((lesson, index) => (
           <Animated.View
             key={lesson.href}
-            entering={FadeInDown.duration(500).delay(350 + index * 80)}
+            entering={FadeInDown.duration(500).delay(350 + index * 180)}
           >
             <Link href={lesson.href as any} asChild>
               <Pressable style={({ pressed }) => [styles.card, pressed && styles.cardPressed]}>
