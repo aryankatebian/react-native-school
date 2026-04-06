@@ -50,6 +50,7 @@ export default function RootLayout() {
         <Stack.Screen name="layout-animations" options={{ title: 'Layout Animations' }} />
         <Stack.Screen name="gesture-ball" options={{ title: 'Gesture Ball' }} />
         <Stack.Screen name="keyframes" options={{ title: 'Keyframes' }} />
+        <Stack.Screen name="css-vs-reanimated" options={{ title: 'CSS Animations' }} />
       </Stack>
     </GestureHandlerRootView>
   );

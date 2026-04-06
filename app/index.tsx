@@ -42,12 +42,17 @@ const lessons = [
     title: 'Keyframe Animations',
     description: 'Multi-step animation sequences using the Keyframe API — the CSS @keyframes equivalent',
   },
+  {
+    href: '/css-vs-reanimated',
+    title: 'CSS Animations in Reanimated',
+    description: 'How CSS transitions, @keyframes, and animation loops map to Reanimated APIs',
+  },
 ] as const;
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <ScrollView
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}
@@ -68,19 +73,22 @@ export default function HomeScreen() {
           >
             <Link href={lesson.href as any} asChild>
               <Pressable style={({ pressed }) => [styles.card, pressed && styles.cardPressed]}>
-                <View style={[styles.badge, { backgroundColor: COLORS[index % COLORS.length] }]}>
-                  <Text style={styles.badgeText}>{index + 1}</Text>
-                </View>
-                <View style={styles.cardContent}>
-                  <Text style={styles.cardTitle}>{lesson.title}</Text>
-                  <Text style={styles.cardDescription}>{lesson.description}</Text>
+                <View style={styles.cardRow}>
+                  <View style={[styles.badge, { backgroundColor: COLORS[index % COLORS.length] }]}>
+                    <Text style={styles.badgeText}>{index + 1}</Text>
+                  </View>
+                  <View style={styles.cardContent}>
+                    <Text style={styles.cardTitle}>{lesson.title}</Text>
+                    <Text style={styles.cardDescription}>{lesson.description}</Text>
+                  </View>
+                  <Text style={styles.arrow}>›</Text>
                 </View>
               </Pressable>
             </Link>
           </Animated.View>
         ))}
 
-        <View style={{ height: 60 }} />
+        <View style={{ height: 70 }} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -89,7 +97,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f172a',
+    backgroundColor: '#f1f5f9',
   },
   scroll: {
     paddingHorizontal: 20,
@@ -99,40 +107,44 @@ const styles = StyleSheet.create({
   greeting: {
     fontSize: 32,
     fontWeight: '800',
-    color: '#f8fafc',
+    color: '#0f172a',
   },
   subtitle: {
     fontSize: 16,
-    color: '#cbd5e1',
+    color: '#64748b',
     marginTop: 6,
     lineHeight: 22,
   },
   divider: {
     height: 1,
-    backgroundColor: '#1e293b',
+    backgroundColor: '#e2e8f0',
     marginVertical: 24,
   },
   card: {
-    backgroundColor: '#1e293b',
+    backgroundColor: '#fff',
     borderRadius: 14,
     padding: 14,
-    marginBottom: 10,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  cardPressed: {
+    backgroundColor: '#f8fafc',
+  },
+  cardRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
-    borderWidth: 1,
-    borderColor: '#334155',
-  },
-  cardPressed: {
-    backgroundColor: '#334155',
   },
   badge: {
-    width: 32,
-    height: 32,
+    width: 34,
+    height: 34,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 2,
   },
   badgeText: {
     color: '#fff',
@@ -143,14 +155,20 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   cardTitle: {
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: '700',
-    color: '#f1f5f9',
-    marginBottom: 3,
+    color: '#1e293b',
+    marginBottom: 2,
   },
   cardDescription: {
-    fontSize: 14,
-    lineHeight: 20,
-    color: '#e2e8f0',
+    fontSize: 13,
+    lineHeight: 18,
+    color: '#64748b',
+    marginBottom: 20,
+  },
+  arrow: {
+    fontSize: 22,
+    color: '#cbd5e1',
+    fontWeight: '600',
   },
 });
