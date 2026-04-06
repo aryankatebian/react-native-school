@@ -53,7 +53,7 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
       >
         <Animated.Text entering={FadeInUp.duration(600).delay(100)} style={styles.greeting}>
-          React Native School
+          Reanimated School
         </Animated.Text>
         <Animated.Text entering={FadeInUp.duration(600).delay(250)} style={styles.subtitle}>
           Unlocking Blazing-Fast Animations with Reanimated

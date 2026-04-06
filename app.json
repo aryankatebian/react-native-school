@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "react-native-school",
-    "slug": "react-native-school",
+    "name": "reanimated-school",
+    "slug": "reanimated-school",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "react-native-school",
+    "scheme": "reanimated-school",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
