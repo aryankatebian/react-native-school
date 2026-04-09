@@ -212,7 +212,7 @@ function AnimatedWave() {
     <View style={styles.demoBlock}>
       <Text style={styles.demoTitle}>Animated Wave</Text>
       <View style={styles.waveContainer}>
-        <Svg width="100%" height={80} viewBox="0 0 280 80">
+        <Svg width="100%" height={100} viewBox="0 0 280 80">
           <AnimatedPath
             animatedProps={animatedProps}
             stroke="#3b82f6"
